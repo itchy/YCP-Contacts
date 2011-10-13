@@ -1,0 +1,19 @@
+1 -- Account Manager creates a user
+2 -- This triggers an email to be sent to the new member
+3 -- The email has a link to sign in and create a password
+4 -- The Member can then update her profile
+
+
+1 -- Account Manager extends a user's activation time
+
+1 -- Member can login
+2 -- Member can edit their user/profile
+3 -- member can browse and search for other members
+
+
+-----   USER FIELDS    -----
+login, password_digest, email, active, roles 
+
+
+-----  PROFILE FIELDS  -----
+user_id, first_name, middle_name, last_name, screen_name, company, title, industry, facebook_link, linkedin_link, twitter_link, phone_number

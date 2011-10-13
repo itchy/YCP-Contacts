@@ -1,0 +1,29 @@
+# Congif Files       #
+######################
+.rvmrc
+.bundle
+db/*.sqlite3
+*.private
+
+
+# Documents #
+######################
+doc/*.key
+doc/marketing/*
+
+# Extra CSS #
+######################
+.sass-cache/
+
+# Logs and yml #
+######################
+# config/initializers/*.yml
+log/*.log
+tmp/**/*
+
+# OS generated files #
+######################
+*~
+.DS_Store
+*.swp
+*.out

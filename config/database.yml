@@ -1,0 +1,19 @@
+# postgres
+# gem 'pg'
+
+common: &common
+  adapter: postgresql
+  username: scott
+  password:  # from psql setup, see Postgresql
+
+development:
+  <<: *common
+  database: contacts_development
+
+test:
+  <<: *common
+  database: contacts_test
+
+production:
+  <<: *common
+  database: contacts_production
