@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   validates :login, :uniqueness => true 
   validates :password, :presence => true, :on => :create
   
+  scope :active, where('active > 0')
+  
   def admin?
     true if self.roles[/9/] == "9" 
   end

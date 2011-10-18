@@ -1,0 +1,18 @@
+<div class="grid_12 prefix_4 alpha omega">
+	<br />
+	<%= form_for :user, :url => session_login_path do |f| %>
+		<div class="grid_2 alpha">		
+		  <%= f.label :login, 'Login' %>:<br />
+			<%= f.label :password, 'Pasword' %>:
+		</div>
+		<div class="grid_14 omega">		
+		  <%= f.text_field :login %><br />
+		  <%= f.password_field :password %>			
+		</div>
+		<div class="grid_2 alpha omega">
+			<%= f.submit %>
+		</div>	  
+	<% end %>
+</div>
+<br />
+

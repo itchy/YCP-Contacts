@@ -1,7 +1,6 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.1'
-gem 'bcrypt-ruby'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
@@ -19,7 +18,7 @@ end
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -34,3 +33,9 @@ group :test do
   # Pretty printed test output
   gem 'turn', :require => false
 end
+
+# When we decide to add profile pictures 
+# gem 'rmagick'
+# gem "paperclip", "~> 2.4.3"
+
+gem "will_paginate", "~> 3.0.2"

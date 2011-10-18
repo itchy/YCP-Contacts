@@ -7,8 +7,32 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+	<div class="container_16">
+		<%= render 'layouts/header' %>
+		<%= (render 'layouts/error', {:error => flash[:error]}) if flash[:error] %>
+		<!-- <div class="grid_11 prefix_1">
+		    <div class="grid_2 alpha">
+		        FIRST
+		    </div>
+		    <div class="grid_3">
+		       SECOND
+		    </div>
+		    <div class="grid_2 omega">
+		        THIRD
+		    </div>
+		</div>
+		<div class="grid_3 suffix_1">
+		    LAST
+		</div> -->
+		<div id="main">
+			<%= yield %>
+		</div>
+		<%= render 'layouts/footer' %>
+	</div>
+	
 
 </body>
 </html>
+
+
+

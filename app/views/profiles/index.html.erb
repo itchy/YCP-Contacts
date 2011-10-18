@@ -1,0 +1,23 @@
+<div class="grid_16 alpha omega">
+	<div id="profiles_filter" class="grid_14 prefix_1 suffix_1 alpha omega">
+		SEARCH FIELDS <br />
+		<%= form_for @search_profile, :url => profiles_path, :method => :get do |f| %>
+			<%= f.label :first_name %>
+			<%= f.text_field :first_name %>
+			<%= f.submit :search %>
+		<% end %>
+		<br />
+		<hr />
+	</div>	
+	<div id="profiles_list" class="grid_14 prefix_1 suffix_1 alpha omega">
+		<% @profiles.each do |profile| %>
+			<%= render "list_item", :profile => profile %>
+		<% end %>	
+	</div>	
+	
+	<div id="paginate" class="grid_10 prefix_3 suffix_3 alpha omega">
+		<%= will_paginate @profiles %>
+	</div>
+</div>
+
+

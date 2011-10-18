@@ -1,4 +1,15 @@
 Contacts::Application.routes.draw do
+  root :to => 'session#index'
+  
+  # session
+  match 'session/register' => 'session#register'
+  match 'session/create' => 'session#create'
+  match 'session/login' => 'session#login'
+  match 'session/logout' => 'session#logout'
+  
+  resources :profiles
+  resources :users
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,7 +59,7 @@ Contacts::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  # root :to => 'session#index'
 
   # See how all your routes lay out with "rake routes"
 
