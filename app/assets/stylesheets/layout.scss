@@ -1,18 +1,21 @@
 div#header{
   background: #CCC;
+  padding-bottom: 10px;
+  border: solid 6px #CCC;
 }
 
 
 div#error{
   background: #CC3300;
+  border: solid 6px #CCC;
 }
 
 div#main {
-  border: solid 4px #CCC;
-  padding: 5px;
+  border: solid 6px #CCC;
   height: 400px;
 }
 
 div#footer {
   background: #CCC;
+  border: solid 6px #CCC;
 }

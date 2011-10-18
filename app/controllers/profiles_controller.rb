@@ -7,11 +7,13 @@ class ProfilesController < ApplicationController
     if params[:profile]
       # set search criterial
       @search_profile = Profile.new(params[:profile])
-      @profiles = Profile.page(params[:page])
+      # @profiles = Profile.where("first_name = 'Scott'").page(params[:page])
+      @profiles = Profile.search(params[:profile]).page(params[:page])
     else  
       @search_profile = Profile.new
       @profiles = Profile.page(params[:page])
     end  
+
   end
   
   def show

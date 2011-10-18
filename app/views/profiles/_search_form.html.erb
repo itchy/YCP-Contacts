@@ -1,0 +1,11 @@
+<%= form_for search_profile, :url => profiles_path, :method => :get do |f| %>
+	<%= f.label :first_name %>
+	<%= f.text_field :first_name %>
+	<%= f.label :last_name %>
+	<%= f.text_field :last_name %>
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+	<%= f.label :company %>
+	<%= f.text_field :company %>
+	<%= f.submit :search %>
+<% end %>

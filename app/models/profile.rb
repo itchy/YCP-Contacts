@@ -1,6 +1,6 @@
 class Profile < ActiveRecord::Base
   belongs_to :user, :dependent => :destroy
-  default_scope joins(:user).where('active > 0')
+  default_scope joins(:user).where('active > 0').order("last_name").order("first_name")
   
   # validates :screen_name, :presence => true, :on => :create
   self.per_page = 10
@@ -16,4 +16,13 @@ class Profile < ActiveRecord::Base
     super
   end
   
+  class << self
+    def search(args={})
+      profiles = Profile
+      args.each_pair do |key, value|      
+        profiles = profiles.where("#{key} like ?", "%#{value}%") 
+      end
+      profiles  
+    end
+  end
 end
