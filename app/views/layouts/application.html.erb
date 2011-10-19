@@ -16,6 +16,10 @@
 			<%= (render 'layouts/error', {:error => flash[:error]}) if flash[:error] %>
 		</div>
 		<div class="clear"></div>
+		<div id="flash_notice" class="grid_14 prefix_1 suffix_1">	
+			<%= (render 'layouts/notice', {:notice => flash[:notice]}) if flash[:notice] %>
+		</div>
+		<div class="clear"></div>
 		<div id="main"  class="grid_14 prefix_1 suffix_1">
 			<%= yield %>
 		</div>

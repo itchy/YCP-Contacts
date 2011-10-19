@@ -20,6 +20,9 @@ gem 'jquery-rails'
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 
+# user form_for.error_messages
+gem "dynamic_form"
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

@@ -2,8 +2,8 @@ HEADER <br />
 <% if current_user %>
 	<%= link_to("Logout", session_logout_path )%> <br />
 	<%= link_to("My Profile", profile_path(current_user.profile))%><br />
-	<%= link_to("All Profiles", profiles_path)%><br />
+	<%= link_to("View Member Profiles", profiles_path)%><br />
 	<% if current_user.admin? %>
-		<%= link_to("Manage Users", "/" )%><br />
+		<%= link_to("Manage Users", admin_users_path )%><br />
 	<% end %>	
 <% end %>	

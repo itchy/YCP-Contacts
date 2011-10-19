@@ -4,17 +4,17 @@ class ApplicationController < ActionController::Base
 
 private  
   def current_user
-    @user ||= User.find(session[:user_id])
+    @current_user ||= User.find(session[:user_id])
     rescue
       nil
   end
   
   def set_current_user(user)
     if user && user.respond_to?(:id)
-      @user = user
-      session[:user_id] = @user.id
+      @current_user = user
+      session[:user_id] = @current_user.id
     else
-      @user = nil
+      @current_user = nil
       session[:user_id] = nil
     end    
   end
@@ -31,5 +31,18 @@ private
   def exit
     set_current_user(nil)
     redirect_to "/"
+  end
+  
+  def admin_only
+    unless current_user.admin?
+      flash[:notice] = "You must be an admin to preform this action!"
+      redirect_to profiles_path 
+      return 
+    end  
+  end
+  
+  #SSJ Thsi is just a helper method used in development
+  def identify
+    fail "Controller => #{params[:controller]} Action => #{params[:action]}\nParams => #{params.inspect}"
   end
 end

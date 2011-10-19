@@ -1,3 +1,4 @@
+<!-- SSJ - I would rather do this as a global search against all fields in a text index and order by match rank, but starting here  -->
 <%= form_for search_profile, :url => profiles_path, :method => :get do |f| %>
 	<%= f.label :first_name %>
 	<%= f.text_field :first_name %>

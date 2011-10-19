@@ -1,0 +1,8 @@
+<% content_for :tab do -%>
+	<div id="tab-header">
+		<h2>Edit User</h2>
+		<%= render "form", :user => @user, :url=> "/admin/users/#{@user.id}", :submit_method=> 'PUT' ,:submit_label => 'Update' %>
+	</div>
+<% end -%>
+
+<%= render :file => 'admin/tabs' -%>

@@ -1,0 +1,15 @@
+<% content_for :tab do -%>
+	<div id="tab-header">
+		<div id="action-links">
+			<%= link_to("New", new_admin_user_path)%>
+		</div>
+	</div>
+	<div id="list_users">
+		<% @users.each do |user| %>
+			<%= render "list_item", :user => user %>
+			<div class="clear"></div>
+		<% end %>	
+	</div>
+<% end -%>
+
+<%= render :file => 'admin/tabs' -%>

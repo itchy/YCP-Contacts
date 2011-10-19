@@ -1,0 +1,35 @@
+/*  Lists  */
+ul.tabs {
+  list-style: none;
+  margin-bottom: 0px;
+  li {
+   	display: inline; 
+  	margin-left: 0;
+  	margin-right: 30px;
+  	padding: 5px;
+  	background: #CCC; 
+  }
+  li.selected {
+	  background: #EEE;
+	}
+}
+
+div.tab_body {
+  width: 800px;
+  background: #EEE;
+  padding: 30px;
+  div#list_users{
+   height: 400px;
+   overflow: auto; 
+  }  
+}
+
+/*  Admin  */
+div#tab-header{
+  div#title{
+    
+  }  
+  div#action-links{
+    float: right;
+  }
+}

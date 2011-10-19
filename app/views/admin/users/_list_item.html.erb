@@ -1,0 +1,18 @@
+<div class=<%= cycle("odd", "even") %> >
+	<div class="grid_5 alpha">
+		<%= user.email %>
+	</div>
+	<div class="grid_3">
+		<%= user.login %>
+	</div>
+	<div class="grid_1">
+		<%= user.active %>
+	</div>
+	<div class="grid_3 ">
+		<%= user.active_until %>
+	</div>
+	<div class="grid_2 omega">
+		<%= link_to("edit", edit_admin_user_path(user) ) %>
+	</div>
+	
+</div >	

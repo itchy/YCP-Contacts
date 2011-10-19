@@ -9,6 +9,10 @@ Contacts::Application.routes.draw do
   
   resources :profiles
   resources :users
+  namespace :admin do
+    # Directs /dashboard/users/* to Dashboard::UsersController
+    resources :users
+  end  
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

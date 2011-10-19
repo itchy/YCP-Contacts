@@ -1,0 +1,19 @@
+	
+<%= form_for user, :url => url, :method => submit_method do |f| %>
+	<%= f.error_messages %>
+	<%= f.label :login %><br />
+	<%= f.text_field :login %><br />
+	<%= f.label :pasword %><br />
+	<%= f.password_field :password %><br />
+	<%= f.label :password_confirmation %><br />
+	<%= f.password_field :password_confirmation %><br />	
+	<%= f.label :email %><br />
+	<%= f.text_field :email %><br />
+	<%= f.label :roles %><br />
+	<%= f.text_field :roles %><br />
+	<%= f.label :active %><br />
+	<%= f.text_field :active %><br />
+	<%= f.label :active_until %><br />
+	<%= f.text_field :active_until %><br />
+	<%= f.submit submit_label %>
+<% end %>	

@@ -62,13 +62,5 @@ private
       @profile = current_user.profile  
     end  
   end
-  
-  def admin_only
-    unless current_user.admin?
-      flash[:notice] = "You must be an admin to preform this action!"
-      redirect_to profiles_path 
-      return 
-    end  
-  end
-  
+
 end

@@ -1,0 +1,8 @@
+<% content_for :tab do -%>
+	<div id="tab-header">
+		<h2>Create New User</h2>
+		<%= render "form", :user => @user, :url=> "/admin/users", :submit_method=> 'POST' ,:submit_label => 'Create' %>
+	</div>
+<% end -%>
+
+<%= render :file => 'admin/tabs' -%>
