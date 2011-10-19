@@ -9,8 +9,9 @@
 u = User.create(:email => '7.scott.j@gmail.com', :login => 'admin', :active => 1, :roles => "1,9", :password => 'abc123')
 u.save
 
-p = Profile.create(   :user_id => u.id,
-                      :first_name => "Scott", 
+p = Profile.find_or_initialize_by_id(u.id)
+
+p.update_attributes(  :first_name => "Scott", 
                       :middle_name => "S",
                       :last_name => "Johnson",
                       :screen_name => "Scott Johnson",

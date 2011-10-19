@@ -5,8 +5,7 @@ class User < ActiveRecord::Base
   validates :email, :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create }
   validates :email, :uniqueness => true 
   validates :login, :uniqueness => true 
-  validates :password, :presence => true, :on => :create
-  validates :password_confirmation, :presence => true, :on => :create
+  validates :password, :presence => { :on => :create }
   
   scope :active, where('active > 0')
   
@@ -22,8 +21,6 @@ class User < ActiveRecord::Base
   end
   
   def create_profile
-    puts "********************************************************\nI GET CALLED!\n********************************************************\n"
-    puts self.inspect
     tmp_profile = Profile.new(:user_id => self.id)
     tmp_profile.save!
   end
