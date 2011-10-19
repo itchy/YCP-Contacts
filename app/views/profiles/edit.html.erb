@@ -1,0 +1,32 @@
+<div id="profile">
+	<h2>Edit Profile</h2>
+	<%= form_for @profile do |f| %>
+		<%= f.error_messages %>
+		<%= f.label :first_name %><br />
+		<%= f.text_field :first_name %><br />
+		<%= f.label :middle_name %><br />
+		<%= f.text_field :middle_name %><br />
+		<%= f.label :last_name %><br />
+		<%= f.text_field :last_name %><br />
+		<%= f.label :company %><br />
+		<%= f.text_field :company %><br />
+		<%= f.label :title %><br />
+		<%= f.text_field :title %><br />
+		<%= f.label :industry %><br />
+		<%= f.text_field :industry %><br />
+		<%= f.label :phone_number %><br />
+		<%= f.text_field :phone_number %><br />
+		<%= f.label :email %><br />
+		<%= text_field :user, :email, :value => @profile.email %><br />
+		<%= f.label :facebook_link %><br />
+		<%= f.text_field :facebook_link %><br />
+		<%= f.label :linkedin_link %><br />
+		<%= f.text_field :linkedin_link %><br />
+		<%= f.label :twitter %><br />
+		<%= f.text_field :twitter_link %><br />
+		<%= f.label :display %><br />
+		<%= f.text_field :display %><br />
+		<%= f.submit "Update" %>
+	<% end %>	
+	
+</div>

@@ -1,0 +1,32 @@
+<div id="account">
+	<h2>Account Info</h2>
+	<div class="grid_4 alpha right">
+		Login:
+	</div>
+	<div class="grid_8 omega left">
+		<%= "#{@current_user.login}"%>
+	</div>
+	<div class="clear"></div>
+	<div class="grid_4 alpha right">
+		email:
+	</div>
+	<div class="grid_8 omega left">
+		<%= mail_to(@current_user.email) %>
+	</div>
+	<div class="clear"></div>
+	<div class="grid_4 alpha right">
+		Subscription Expires:
+	</div>
+	<div class="grid_8 omega left">
+		<%= @current_user.active_until %>
+	</div>
+	<div class="clear"></div>
+</div>	
+
+<%= link_to("edit", account_edit_path)%>
+	
+	
+	
+	
+	
+	

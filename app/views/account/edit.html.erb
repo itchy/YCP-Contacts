@@ -1,0 +1,13 @@
+<h2>Update Account Info</h2>
+<%= form_for @current_user, :url => "/account/update", :method => "PUT" do |f| %>
+	<%= f.error_messages %>
+	<%= f.label :login %><br />
+	<%= f.text_field :login %><br />
+	<%= f.label :pasword %><br />
+	<%= f.password_field :password %><br />
+	<%= f.label :password_confirmation %><br />
+	<%= f.password_field :password_confirmation %><br />	
+	<%= f.label :email %><br />
+	<%= f.text_field :email %><br />
+	<%= f.submit "update" %>
+<% end %>

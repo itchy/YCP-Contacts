@@ -7,8 +7,12 @@ Contacts::Application.routes.draw do
   match 'session/login' => 'session#login'
   match 'session/logout' => 'session#logout'
   
+  match 'account/show' => 'account#show'
+  match 'account/edit' => 'account#edit'
+  match 'account/update' => 'account#update'
+  
   resources :profiles
-  resources :users
+  
   namespace :admin do
     # Directs /dashboard/users/* to Dashboard::UsersController
     resources :users

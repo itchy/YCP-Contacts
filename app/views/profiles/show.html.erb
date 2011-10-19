@@ -1,0 +1,55 @@
+<div id="profile">
+	<h2>Profile for <%= @profile.screen_name %> </h2>
+	<div class="grid_2 alpha right">
+		Name:
+	</div>
+	<div class="grid_10 omega left">
+		<%= "#{@profile.screen_name}"%>
+	</div>
+	<div class="clear"></div>
+	<div class="grid_2 alpha right">
+		Company:
+	</div>
+	<div class="grid_10 omega left">
+		<%= "#{@profile.company}"%>
+	</div>
+	<div class="clear"></div>
+	<div class="grid_2 alpha right">
+		Title:
+	</div>
+	<div class="grid_10 omega left">
+		<%= "#{@profile.title}"%>
+	</div>
+	<div class="clear"></div>
+	<div class="grid_2 alpha right">
+		Industry:
+	</div>
+	<div class="grid_10 omega left">
+		<%= "#{@profile.industry}"%>
+	</div>
+	<div class="clear"></div>
+	<div class="grid_2 alpha right">
+		Phone:
+	</div>
+	<div class="grid_10 omega left">
+		<%= "#{@profile.phone_number}"%>
+	</div>
+	<div class="clear"></div>
+	<div class="grid_2 alpha right">
+		email:
+	</div>
+	<div class="grid_10 omega left">
+		<%= mail_to(@profile.email) %>
+	</div>
+	<div class="clear"></div>
+	<div class="grid_3 alpha right">
+		<%= link_to("Facebook", @profile.facebook_link )%>
+	</div>
+	<div class="grid_3 right">
+		<%= link_to("LinkedIn", @profile.linkedin_link )%>
+	</div>
+	<div class="grid_3 omega right">
+		<%= link_to("Twitter", @profile.twitter_link )%>
+	</div>
+	<div class="clear"></div>		
+</div>

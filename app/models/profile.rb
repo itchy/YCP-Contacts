@@ -5,8 +5,14 @@ class Profile < ActiveRecord::Base
   self.per_page = 10
   validates :user_id, :uniqueness => true
   
+  before_save :set_screen_name
+  
   def admin?
     user.roles[/9/]
+  end
+  
+  def set_screen_name
+    self.screen_name = "#{self.first_name} #{self.last_name}"
   end
   
   class << self

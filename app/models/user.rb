@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   validates :login, :uniqueness => true 
   validates :password, :presence => { :on => :create }
   
-  scope :active, where('active > 0')
+  scope :active,  lambda { where("active > 0 AND active_until > ? ", Time.now().strftime("%F") ).order("email") }
   
   after_create :create_profile
   
