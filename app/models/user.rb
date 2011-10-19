@@ -2,8 +2,9 @@ class User < ActiveRecord::Base
   has_one :profile, :dependent => :destroy  
   has_secure_password
   
-  validates :email, :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create }
+  validates :email, :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i }
   validates :email, :uniqueness => true 
+  validates :email, :presence => true 
   validates :login, :uniqueness => true 
   validates :password, :presence => { :on => :create }
   
