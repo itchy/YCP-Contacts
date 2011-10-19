@@ -6,10 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-u = User.create(:email => '7.scott.j@gmail.com', :login => 'admin', :active => 1, :roles => "1,9", :password => 'abc123')
+u = User.create(:email => '7.scott.j@gmail.com', :login => 'admin', :active => 1, :roles => "1,9", :password => "abc123")
 u.save
 
-p = Profile.find_or_initialize_by_id(u.id)
+p = Profile.find_or_initialize_by_user_id(u.id)
 
 p.update_attributes(  :first_name => "Scott", 
                       :middle_name => "S",

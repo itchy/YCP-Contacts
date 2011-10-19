@@ -1,7 +1,7 @@
 class Profile < ActiveRecord::Base
   belongs_to :user, :dependent => :destroy
   delegate :email, :to => :user
-  default_scope lambda { joins(:user).where("active > 0 AND active_until > ? ", Time.now().strftime("%F") ).order("last_name").order("first_name") }
+  scope :active,  lambda { joins(:user).where("active > 0 AND active_until > ? ", Time.now().strftime("%F") ).order("last_name").order("first_name") }
   self.per_page = 10
   validates :user_id, :uniqueness => true
   

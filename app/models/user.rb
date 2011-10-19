@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
-  has_one :profile, :dependent => :destroy
-  
+  has_one :profile, :dependent => :destroy  
   has_secure_password
+  
   validates :email, :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create }
   validates :email, :uniqueness => true 
   validates :login, :uniqueness => true 
@@ -13,11 +13,8 @@ class User < ActiveRecord::Base
   
   def initialize(*args)
     super # be sure to create ActiveRecord::Base before setting values to it
-    random ="random"
     self.active= 1
     self.active_until= (Time.now + (60 * 60 * 24 * 365)).strftime("%F")
-    self.password= random
-    self.password_confirmation= random
   end
   
   def create_profile
