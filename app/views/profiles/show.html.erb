@@ -1,30 +1,30 @@
 <div id="profile">
 	<h2>Profile for <%= @profile.screen_name %> </h2>
 	<div class="grid_2 alpha right">
-		Name:<br />
-		Company:<br />
-		Title:<br />
-		Industry:<br />
-		Specialty:<br />
-		Chapter:<br />
-		Parish:<br />
-		Phone:<br />
-		Mentor:<br />
-		email:<br />
-		About Me:<br />
+		Name:<br /><br />
+		Company:<br /><br />
+		Title:<br /><br />
+		Industry:<br /><br />
+		Specialty:<br /><br />
+		Chapter:<br /><br />
+		Parish:<br /><br />
+		Phone:<br /><br />
+		Mentor:<br /><br />
+		email:<br /><br />
+		About Me:<br /><br />
 	</div>
 	<div class="grid_10 omega left">
-		<%= "#{@profile.screen_name}"%><br />
-		<%= "#{@profile.company}"%><br />
-		<%= "#{@profile.title}"%><br />
-		<%= "#{@profile.industry}"%><br />
-		<%= "#{@profile.industry_specialty}"%><br />
-		<%= "#{@profile.chapter}"%><br />
-		<%= "#{@profile.parish}"%><br />	
-		<%= "True" if @profile.mentor %><br />
-		<%= "#{@profile.phone_number}"%><br />		
-		<%= mail_to(@profile.email) %><br />
-		<%= "#{@profile.about_me}"%><br />
+		<%= "#{@profile.screen_name}"%><br /><br />
+		<%= "#{@profile.company}"%><br /><br />
+		<%= "#{@profile.title}"%><br /><br />
+		<%= "#{@profile.industry}"%><br /><br />
+		<%= "#{@profile.industry_specialty}"%><br /><br />
+		<%= "#{@profile.chapter}"%><br /><br />
+		<%= "#{@profile.parish}"%><br /><br />
+		<%= "#{@profile.phone_number}"%><br /><br />	
+		<%= "True" if @profile.mentor %><br /><br />
+		<%= mail_to(@profile.email) %><br /><br />
+		<%= "#{@profile.about_me}"%><br /><br />
 	</div>
 	<div class="clear"></div>
 	<div class="grid_3 alpha right">
