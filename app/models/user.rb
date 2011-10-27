@@ -30,5 +30,14 @@ class User < ActiveRecord::Base
   def active?
     true if self.active > 0
   end
+  
+  def account_expired?
+    self.active_until < Date.parse(Time.now.strftime("%F"))
+    
+  end
+
+  def account_about_to_expire?
+    self.active_until - 30 < Date.parse(Time.now.strftime("%F"))
+  end
 
 end

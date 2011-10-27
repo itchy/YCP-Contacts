@@ -23,6 +23,8 @@ private
     if current_user
       session[:user_id] = current_user.id
       current_user.id
+      user_account_expired?
+      profile_complete? unless params[:controller] == 'profiles' && params[:action] == 'update'
     else
       exit
     end    
@@ -40,6 +42,25 @@ private
       return 
     end  
   end
+  
+  def user_account_expired?
+
+    if current_user.account_expired?
+      flash[:notice] = "Your account has expired.  To reactivate it, please contact the site administrator."
+      exit
+    elsif current_user.account_about_to_expire?
+      flash[:notice] = "Your account will expire on #{current_user.active_until}.  Please contact the site administrator to prevent loss of access."
+    end 
+  end
+  
+  def profile_complete?
+    unless current_user.profile.complete?
+      flash[:notice] = "You need to complete your profile before you can access the rest of this site."
+      @profile = current_user.profile
+      render :template => "/profiles/edit"
+    end  
+  end
+
   
   #SSJ Thsi is just a helper method used in development
   def identify

@@ -1,5 +1,5 @@
 class AccountController < ApplicationController
-  before_filter :set_instance_user
+  before_filter  :set_instance_user, :authenticate
   
   def show
     # set @current_user in before_filter and render default view

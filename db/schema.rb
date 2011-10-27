@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111013034131) do
+ActiveRecord::Schema.define(:version => 20111027022801) do
 
   create_table "profiles", :force => true do |t|
     t.integer  "user_id"
@@ -26,9 +26,14 @@ ActiveRecord::Schema.define(:version => 20111013034131) do
     t.string   "linkedin_link"
     t.string   "twitter_link"
     t.string   "phone_number"
-    t.integer  "display",       :default => 0
+    t.integer  "display",            :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "about_me"
+    t.string   "parish"
+    t.string   "industry_specialty"
+    t.integer  "mentor"
+    t.string   "chapter"
   end
 
   create_table "users", :force => true do |t|
