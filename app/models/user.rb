@@ -25,13 +25,11 @@ class User < ActiveRecord::Base
   
   def send_welcome_email
     tmail = Notifier.welcome_new_member(self).deliver
-    flash[:notice] = "Welcome email send to #{self.email}."
     # render(:text => tmail)
   end
   
   def send_admin_message(subject, message)
     tmail = Notifier.send_member_admin_message(self, subject="A message from the YCP system admin", message).deliver
-    flash[:notice] = "Admin email send to #{self.email}."
   end
   
   def admin?
