@@ -16,6 +16,10 @@ class Admin::UsersController < ApplicationController
   
   def create
     @user = User.new(params[:user])
+    # set default password unless one is provided
+    if @user.password.blank? && @user.password_confirmation.blank?
+      @user.password, @user.password_confirmation = "password", "password"
+    end  
     if @user.save
       flash[:notice] = "User Created!"
       redirect_to :action => 'index'
