@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   
   scope :active,  lambda { where("active > 0 AND active_until > ? ", Time.now().strftime("%F") ).order("email") }
   
-  after_create :create_profile
+  after_create :create_profile, :send_welcome_email
   
   def initialize(*args)
     super # be sure to create ActiveRecord::Base before setting values to it
@@ -21,6 +21,17 @@ class User < ActiveRecord::Base
   def create_profile
     tmp_profile = Profile.new(:user_id => self.id)
     tmp_profile.save!
+  end
+  
+  def send_welcome_email
+    tmail = Notifier.welcome_new_member(self).deliver
+    flash[:notice] = "Welcome email send to #{self.email}."
+    # render(:text => tmail)
+  end
+  
+  def send_admin_message(subject, message)
+    tmail = Notifier.send_member_admin_message(self, subject="A message from the YCP system admin", message).deliver
+    flash[:notice] = "Admin email send to #{self.email}."
   end
   
   def admin?
