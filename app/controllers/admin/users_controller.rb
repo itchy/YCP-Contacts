@@ -1,5 +1,5 @@
 class Admin::UsersController < ApplicationController
-  before_filter :admin_only, :set_selected_tab
+  before_filter :admin_only, :set_selected_tab, :authenticate
   # before_filter :identify
   
   def index

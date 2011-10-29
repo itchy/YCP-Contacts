@@ -21,10 +21,11 @@ private
   
   def authenticate
     if current_user
-      session[:user_id] = current_user.id
-      current_user.id
-      user_account_expired?
-      profile_complete? unless params[:controller] == 'profiles' && params[:action] == 'update'
+      if user_account_expired?
+        exit
+      else  
+        profile_complete? unless params[:controller] == 'profiles' && params[:action] == 'update'
+      end  
     else
       exit
     end    
@@ -32,7 +33,7 @@ private
   
   def exit
     set_current_user(nil)
-    redirect_to "/"
+    redirect_to("/")
   end
   
   def admin_only
@@ -44,12 +45,14 @@ private
   end
   
   def user_account_expired?
-
     if current_user.account_expired?
       flash[:notice] = "Your account has expired.  To reactivate it, please contact the site administrator."
-      exit
+      true
     elsif current_user.account_about_to_expire?
       flash[:notice] = "Your account will expire on #{current_user.active_until}.  Please contact the site administrator to prevent loss of access."
+      false
+    else
+      false
     end 
   end
   

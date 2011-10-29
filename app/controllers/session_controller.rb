@@ -9,10 +9,8 @@ class SessionController < ApplicationController
     # fail user.inspect
     
     if user && user.authenticate(params[:user][:password])
-      puts "HERE I AM \n#{user.inspect}"
       set_current_user(user)
       redirect_to profiles_path
-      # render :text => "You're in!"
     else
       flash[:login_error] = "Invalid email/password combination!"
       redirect_to "/"
@@ -27,7 +25,6 @@ class SessionController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       set_current_user(@user)
-      puts "**************************\n\n#{user_path(current_user)}\n\n***********************"
       redirect_to user_path(current_user)
     else
       render :register
