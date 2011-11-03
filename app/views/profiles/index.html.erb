@@ -14,7 +14,9 @@
 			<th>&nbsp;</th>
 		</tr>
 	<% @profiles.each do |profile| %>
-		<%= render "list_item", :profile => profile %>
+		<%= if profile.complete?
+		render "list_item", :profile => profile 
+		end %>
 	<% end %>	
 	</table>
 </div>	
