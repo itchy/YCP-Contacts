@@ -2,33 +2,43 @@
 <html>
 <head>
   <title>Contacts</title>
-  <%= stylesheet_link_tag    "application" %>
+  <%= stylesheet_link_tag    "grid" %>
+  <%= stylesheet_link_tag    "text" %>
+  <%= stylesheet_link_tag    "main-style" %>
+  <%= stylesheet_link_tag    "main-font" %>
+
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+
 </head>
-<body>
-	<div class="container_16">
-		<div id="header" class="grid_14 prefix_1 suffix_1">
+
+<body class='one-column'>
+
+
+		<div id="header">
 			<%= render 'layouts/header' %>
 		</div>
-		<div class="clear"></div>
-		<div id="flash_error" class="grid_14 prefix_1 suffix_1">	
+
+		<div id="flash_error">	
 			<%= (render 'layouts/error', {:error => flash[:error]}) if flash[:error] %>
 		</div>
-		<div class="clear"></div>
-		<div id="flash_notice" class="grid_14 prefix_1 suffix_1">	
+
+		<div id="flash_notice">	
 			<%= (render 'layouts/notice', {:notice => flash[:notice]}) if flash[:notice] %>
 		</div>
-		<div class="clear"></div>
-		<div id="main"  class="grid_14 prefix_1 suffix_1">
+
+		<div id='content'>
+			<div id="content-container">
+				<div id="main-content">
 			<%= yield %>
 		</div>
-		<div class="clear"></div>			
-		<div id="footer" class="grid_14 prefix_1 suffix_1">
+		</div>
+		</div>
+<!--
+		<div id="footer">
 			<%= render 'layouts/footer' %>
 		</div>
-		<div class="clear"></div>
-	</div>
+-->
 	
 
 </body>

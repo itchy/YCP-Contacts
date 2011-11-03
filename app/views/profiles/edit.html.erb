@@ -2,51 +2,33 @@
 	<h2>Edit Profile</h2>
 	<%= form_for @profile do |f| %>
 		<%= f.error_messages %>
-		<div id="form_left" class="grid_5">
-			<%= f.label :first_name %><br />
-			<%= f.text_field :first_name %><br />
-			<%= f.label :company %><br />
-			<%= f.text_field :company %><br />
-			<%= f.label :industry_specialty %><br />
-			<%= f.text_field :industry_specialty %><br />
-			<%= f.label :chapter %><br />
-			<%= f.text_field :chapter %><br />
-			<%= f.label :facebook_link %><br />
-			<%= f.text_field :facebook_link %><br />
-		</div>
-		<div id="form_center" class="grid_5">
-			<%= f.label :middle_name %><br />
-			<%= f.text_field :middle_name %><br />
-			<%= f.label :title %><br />
-			<%= f.text_field :title %><br />
-			<%= f.label :phone_number %><br />
-			<%= f.text_field :phone_number %><br />
-			<%= f.label :parish %><br />
-			<%= f.text_field :parish %><br />
-			<%= f.label :linkedin_link %><br />
-			<%= f.text_field :linkedin_link %><br />
-		</div>
-		<div id="form_right" class="grid_5 suffix_1">
-			<%= f.label :last_name %><br />
-			<%= f.text_field :last_name %><br />
-			<%= f.label :industry %><br />
-			<%= f.text_field :industry %><br />
-			<%= f.label :email %><br />
-			<%= text_field :user, :email, :value => @profile.email %><br />
-			<%= f.label :mentor %><br />
-			<%= f.check_box :mentor %><br />
-			<%= f.label :twitter %><br />
-			<%= f.text_field :twitter_link %><br />
-		</div>	
-		<div id="form_left_center" class="grid_10">
-			<%= f.label :About_me %><br />
-			<%= f.text_area :about_me, :maxlength => 400, :cols => 50, :rows => 5 %><br />
+		<div class="form_left">
+			<%= f.label :first_name %> <%= f.text_field :first_name %><br />
+			<%= f.label :middle_name %> <%= f.text_field :middle_name %><br />
+			<%= f.label :last_name %> <%= f.text_field :last_name %><br /><br />
+
+			<%= f.label :company %> <%= f.text_field :company %><br />
+			<%= f.label :industry %> <%= f.text_field :industry %><br />
+			<%= f.label :industry_specialty %> <%= f.text_field :industry_specialty %><br />
+			<%= f.label :title %> <%= f.text_field :title %><br /><br />
+			<!--<%= f.label :chapter %><br />-->
+			<!--<%= f.text_field :chapter %><br />-->
+
+
+			<%= f.label :email %> <%= text_field :user, :email, :value => @profile.email %><br />
+			<%= f.label :phone_number %> <%= f.text_field :phone_number %><br />
+			<%= f.label :parish %> <%= f.text_field :parish %><br /><br />
+
+			<!--<%= f.label :mentor %><br />-->
+			<!--<%= f.check_box :mentor %><br />-->
+			<%= f.label :facebook_link %> <%= f.text_field :facebook_link %><br />
+			<%= f.label :twitter %> <%= f.text_field :twitter_link %><br />
+			<%= f.label :linkedin_link %> <%= f.text_field :linkedin_link %><br />
+
+			<%= f.label :About_me %> <%= f.text_area :about_me, :maxlength => 400, :cols => 50, :rows => 5 %><br />
 			<div class="charsRemaining"></div>
 			<%= f.submit "Update" %>
 		</div>
-		<div id="form_right2" class="grid_5 suffix_1">
-			<%= f.label :display %><br />
-			<%= f.check_box :display %><br />
-		</div>			
+		
 	<% end %>	
 </div>
