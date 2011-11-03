@@ -1,11 +1,11 @@
-<div class="grid_12 prefix_4 alpha omega">
+<div class='login'>
 	<br />
 	<%= form_for :user, :url => session_login_path do |f| %>
-		<div class="grid_2 alpha">		
+		<div class='labels'>		
 		  <%= f.label :login, 'Login' %>:<br />
 			<%= f.label :password, 'Pasword' %>:
 		</div>
-		<div class="grid_14 omega">		
+		<div class="fields">		
 		  <%= f.text_field :login %><br />
 		  <%= f.password_field :password %>			
 		</div>

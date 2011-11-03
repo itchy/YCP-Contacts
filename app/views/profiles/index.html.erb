@@ -1,13 +1,22 @@
 <div id="profiles_filter">
-	SEARCH FIELDS <br />
+	SEARCH <br />
 		<%= render "search_form", :search_profile => @search_profile %>
 	<br />
 	<hr />
 </div>	
 <div id="profiles_list">
+	<table>
+		<tr>
+			<th>Name</th>
+			<th>Industry</th>
+			<th>Company</th>
+			<th>Title</th>
+			<th>&nbsp;</th>
+		</tr>
 	<% @profiles.each do |profile| %>
 		<%= render "list_item", :profile => profile %>
 	<% end %>	
+	</table>
 </div>	
 
 <div id="paginate">

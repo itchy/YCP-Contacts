@@ -1,14 +1,22 @@
 <% content_for :tab do -%>
 	<div id="tab-header">
 		<div id="action-links">
-			<%= link_to("New", new_admin_user_path)%>
+			<%= link_to("Create New User", new_admin_user_path)%>
 		</div>
 	</div>
 	<div id="list_users">
+		<table>
+			<tr>
+				<th>Username</th>
+				<th>Email</th>
+				<th>Active</th>
+				<th>Expires</th>
+			</tr>
 		<% @users.each do |user| %>
 			<%= render "list_item", :user => user %>
-			<div class="clear"></div>
+
 		<% end %>	
+		</table>
 	</div>
 <% end -%>
 

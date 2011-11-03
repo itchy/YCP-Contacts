@@ -1,0 +1,52 @@
+body {
+	color: black;
+}
+
+h1, h2, h3 {
+	margin-bottom: .5em;
+	font-size: 1.2em;
+}
+
+a {
+	text-decoration: none;
+	color: #b03131;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+#user-controls {
+	ul {
+		list-style-type: none;
+		margin-left: 10px;
+		li {
+			margin: 0;
+		}
+	}
+}
+
+#main-nav a {
+	color: #f1efe0;
+	&:hover {
+		color: #b03131;
+	};
+}
+
+h2.section-header {
+	font-size: 1.2em;
+	color: #b03131;
+	border-bottom: 1px dotted #333;
+}
+
+#sponsors, #social {
+	margin-top: 1em;
+	text-align: center;
+}
+
+.article-title, .article-date {
+	color: #284058;
+}
+
+.article-date {
+	float: right;
+}
