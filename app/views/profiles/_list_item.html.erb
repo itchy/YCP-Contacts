@@ -1,21 +1,22 @@
-<div class=<%= cycle("odd", "even") %> >
-	<div class="grid_4 alpha">
+
+<tr class=<%= cycle("odd", "even") %> >
+	<td class="grid_4 alpha">
 		<%= profile.screen_name %>
-	</div>
-	<div class="grid_3">
+	</td>
+	<td class="grid_3">
 		<%= profile.industry %>
-	</div>
-	<div class="grid_3">
+	</td>
+	<td class="grid_3">
 		<%= profile.company %>
-	</div>
-	<div class="grid_4 ">
+	</td>
+	<td class="grid_4 ">
 		<%= profile.title %>
-	</div>	
-	<div class="grid_2 omega">
+	</td>	
+	<td class="grid_2 omega">
 		<%= link_to("show", profile_path(profile) ) %>
 		<% if current_user.admin? %>
 			&nbsp;|&nbsp; <%= link_to("edit", edit_profile_path(profile) ) %>
 		<% end %>		
-	</div>
-	<div class="clear"></div>
-</div >
+	</td>
+	
+</tr >

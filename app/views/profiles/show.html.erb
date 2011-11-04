@@ -1,40 +1,35 @@
 <div id="profile">
 	<h2>Profile for <%= @profile.screen_name %> </h2>
 	<div class="grid_2 alpha right">
-		Name:<br /><br />
-		Company:<br /><br />
-		Title:<br /><br />
-		Industry:<br /><br />
-		Specialty:<br /><br />
-		Chapter:<br /><br />
-		Parish:<br /><br />
-		Phone:<br /><br />
-		Mentor:<br /><br />
-		email:<br /><br />
-		About Me:<br /><br />
+		<%= if not (@profile.screen_name.to_s.empty?) then "Name: #{@profile.screen_name}<br />".html_safe end %>
+		<%= if not ( @profile.company.to_s.empty?) then "Company: #{@profile.company}<br />".html_safe end %>
+		<%= if not ( @profile.title.to_s.empty?) then "Title: #{@profile.title}<br />".html_safe end %>
+		<%= if not ( @profile.industry.to_s.empty?) then "Industry: #{@profile.industry}<br />".html_safe end %>
+		<%= if not ( @profile.industry_specialty.to_s.empty?) then "Specialty: #{@profile.industry_specialty}<br />".html_safe end %>
+		<!--Chapter: 		<%= "#{@profile.chapter}<br />".html_safe%> <br />-->
+		<%= if not ( @profile.parish.to_s.empty?) then "Parish: #{@profile.parish}<br />".html_safe end %> 
+		<%= if not ( @profile.phone_number.to_s.empty?) then "Phone: #{@profile.phone_number}<br />".html_safe end %>
+		<!--Mentor: 		<%= "True" if @profile.mentor %> <br />-->
+		<%= if not ( @profile.email.to_s.empty?)
+			then 
+			("Email: " + mail_to(@profile.email)).html_safe
+			end %> <br /><br />
+		<%= if not (@profile.about_me.to_s.empty?) then "About Me: #{@profile.about_me}<br />".html_safe end %><br />
 	</div>
-	<div class="grid_10 omega left">
-		<%= "#{@profile.screen_name}"%><br /><br />
-		<%= "#{@profile.company}"%><br /><br />
-		<%= "#{@profile.title}"%><br /><br />
-		<%= "#{@profile.industry}"%><br /><br />
-		<%= "#{@profile.industry_specialty}"%><br /><br />
-		<%= "#{@profile.chapter}"%><br /><br />
-		<%= "#{@profile.parish}"%><br /><br />
-		<%= "#{@profile.phone_number}"%><br /><br />	
-		<%= "True" if @profile.mentor %><br /><br />
-		<%= mail_to(@profile.email) %><br /><br />
-		<%= "#{@profile.about_me}"%><br /><br />
-	</div>
-	<div class="clear"></div>
 	<div class="grid_3 alpha right">
-		<%= link_to("Facebook", @profile.facebook_link )%>
+		<%= if not (@profile.facebook_link.to_s.empty?) 
+			link_to("Facebook", @profile.facebook_link ) 
+		end %>
 	</div>
 	<div class="grid_3 right">
-		<%= link_to("LinkedIn", @profile.linkedin_link )%>
+		<%= if not (@profile.linkedin_link.to_s.empty?) 
+			link_to("LinkedIn", @profile.linkedin_link )
+		end %>
 	</div>
 	<div class="grid_3 omega right">
-		<%= link_to("Twitter", @profile.twitter_link )%>
+		<%= if not (@profile.twitter_link.to_s.empty?)
+			link_to("Twitter", @profile.twitter_link )
+		end %>
 	</div>
 	<div class="clear"></div>		
 </div>

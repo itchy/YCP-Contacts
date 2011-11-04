@@ -1,0 +1,103 @@
+/* line 9, ../sass/main-style.scss */
+body {
+  background: url('../images/content-bg.jpg?1320347612') #f1efe0 repeat-x;
+}
+
+/* line 13, ../sass/main-style.scss */
+#header {
+  background: url('../images/header-bg.jpg?1320347618');
+  height: 143px;
+}
+/* line 16, ../sass/main-style.scss */
+#header #main-nav ul {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  *zoom: 1;
+  height: 143px;
+  line-height: 143px;
+}
+/* line 60, ../../../../../../.rvm/gems/ruby-1.9.2-p136@ycpcontacts/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+#header #main-nav ul li {
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0px;
+  white-space: nowrap;
+  display: inline;
+  float: left;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+/* line 48, ../../../../../../.rvm/gems/ruby-1.9.2-p136@ycpcontacts/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+#header #main-nav ul li:first-child, #header #main-nav ul li.first {
+  padding-left: 0;
+}
+/* line 49, ../../../../../../.rvm/gems/ruby-1.9.2-p136@ycpcontacts/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+#header #main-nav ul li:last-child {
+  padding-right: 0;
+}
+/* line 50, ../../../../../../.rvm/gems/ruby-1.9.2-p136@ycpcontacts/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+#header #main-nav ul li.last {
+  padding-right: 0;
+}
+/* line 20, ../sass/main-style.scss */
+#header #main-nav ul li {
+  padding-left: 16px;
+  padding-right: 8px;
+}
+/* line 25, ../sass/main-style.scss */
+#header #logo a {
+  display: inline-block;
+  text-indent: -119988px;
+  overflow: hidden;
+  text-align: left;
+  background-image: url('../images/logo.png?1320347622');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  width: 308px;
+  height: 117px;
+}
+
+/* line 32, ../sass/main-style.scss */
+.login .labels {
+  float: left;
+}
+
+/* line 38, ../sass/main-style.scss */
+#profiles_filter input {
+  width: 135px;
+}
+
+/* line 43, ../sass/main-style.scss */
+table {
+  background-color: white;
+  width: 100%;
+}
+/* line 46, ../sass/main-style.scss */
+table th {
+  padding: 10px;
+  text-align: left;
+  font-weight: bold;
+}
+/* line 51, ../sass/main-style.scss */
+table td {
+  padding: 10px;
+  text-align: left;
+}
+/* line 55, ../sass/main-style.scss */
+table tr.odd {
+  background-color: #eee;
+}
+
+/* line 62, ../sass/main-style.scss */
+#profile .form_left, #profile .form_center, #profile .form_right {
+  float: left;
+}
+/* line 65, ../sass/main-style.scss */
+#profile label {
+  width: 120px;
+  alight: right;
+  float: left;
+  display: block;
+}
