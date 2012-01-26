@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
   before_filter :authenticate#, :identify
-  before_filter :set_profile, :except => [:index]
+  before_filter :set_profile, :except => [:index, :show]
   # before_filter :admin_only, :only => [:new, :create, :destroy] -- done in user
   
   def index
@@ -17,7 +17,7 @@ class ProfilesController < ApplicationController
   end
   
   def show
-    # set @profile in before_filter and render default view
+    @profile = Profile.find(params[:id])
   end
   
   def new
