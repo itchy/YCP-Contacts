@@ -1,6 +1,9 @@
 class Profile < ActiveRecord::Base
-  belongs_to :user, :dependent => :destroy
-  delegate :email, :to => :user
+  extend PsuedoInheritance::ClassMethods
+  
+  # belongs_to :user, :dependent => :destroy
+  inherits_from :user, :dependent => :destroy
+  # delegate :email, :to => :user
   scope :active,  lambda { joins(:user).where("active > 0 AND active_until > ? ", Time.now().strftime("%F") ).order("last_name").order("first_name") }
   self.per_page = 10
   validates :user_id, :uniqueness => true
@@ -28,7 +31,7 @@ class Profile < ActiveRecord::Base
         return false
       end
     end     
-  end
+  end  
   
   class << self
     def search(args={})
